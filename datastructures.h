@@ -164,7 +164,7 @@ hash_table *look_up(char *name,hash_table *hash_map[MAX_TABLE],int length)
     ASSERT(hash_map != NULL,"hash_map is equal to NULL (look_up)");
 
     uint32_t index = hash(name,length - 1);
-    if(hash_map[index] != NULL && !strncmp(name,hash_map[index]->name,length)) return hash_map[index];
+    if(hash_map[index] != NULL && !strncmp(name,hash_map[index]->name,length - 1)) return hash_map[index];
     
     else return NULL;
 }
